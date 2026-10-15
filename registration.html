@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration - Assignment 4</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Assignment tasks">
+      <a class="navbar-brand" href="index.html">Form practice<span>.</span></a>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">0. Basic form</a></li>
+        <li class="nav-item"><a class="nav-link" href="html-validation.html">1. HTML5 validation</a></li>
+        <li class="nav-item"><a class="nav-link" href="bootstrap-form.html">2. Bootstrap form</a></li>
+        <li class="nav-item"><a class="nav-link" href="bootstrap-validation.html">3. Feedback</a></li>
+        <li class="nav-item"><a class="nav-link active" href="registration.html" aria-current="page">4. Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="row gx-4 gy-5">
+      <div class="col-lg-4">
+        <p class="eyebrow">Assignment 04 / Task 4</p>
+        <h1>Registration</h1>
+        <p class="intro">A few details to get started. Choose your interests and make yourself at home.</p>
+        <p class="task-note">Part 3 / Advanced form project</p>
+      </div>
+
+      <div class="col-lg-8">
+        <section class="form-panel" aria-label="Registration">
+          <form id="registration" class="row g-3" method="post" novalidate>
+            <div class="col-md-6">
+              <label class="form-label" for="first-name">First name</label>
+              <input class="form-control" type="text" id="first-name" name="firstName" placeholder="First name" autocomplete="given-name" minlength="2" maxlength="60" aria-describedby="first-name-error" required>
+              <div id="first-name-error" class="invalid-feedback">Enter your first name with 2 to 60 characters.</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="last-name">Last name</label>
+              <input class="form-control" type="text" id="last-name" name="lastName" placeholder="Last name" autocomplete="family-name" minlength="2" maxlength="60" aria-describedby="last-name-error" required>
+              <div id="last-name-error" class="invalid-feedback">Enter your last name with 2 to 60 characters.</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" maxlength="120" aria-describedby="email-error" required>
+              <div id="email-error" class="invalid-feedback">Enter a valid email address.</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="password">Password</label>
+              <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" maxlength="64" aria-describedby="password-help password-error" required>
+              <div class="form-text" id="password-help">Use 8 to 64 characters.</div>
+              <div id="password-error" class="invalid-feedback">Enter a password with 8 to 64 characters.</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="confirm-password">Confirm password</label>
+              <input class="form-control" type="password" id="confirm-password" name="confirmPassword" autocomplete="new-password" minlength="8" maxlength="64" aria-describedby="confirm-password-error" required>
+              <div id="confirm-password-error" class="invalid-feedback">Enter the same password again.</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <fieldset class="col-12">
+              <legend class="form-label">Gender</legend>
+              <div class="choices">
+                <input class="form-check-input" type="radio" id="male" name="gender" value="male" aria-describedby="gender-error" required>
+                <label for="male">Male</label>
+                <input class="form-check-input" type="radio" id="female" name="gender" value="female" aria-describedby="gender-error" required>
+                <label for="female">Female</label>
+                <input class="form-check-input" type="radio" id="prefer-not" name="gender" value="prefer-not" aria-describedby="gender-error" required>
+                <label for="prefer-not">Prefer not to say</label>
+                <div id="gender-error" class="invalid-feedback">Choose one option.</div>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </fieldset>
+
+            <fieldset class="col-12">
+              <legend class="form-label">Hobbies <span class="optional">(optional)</span></legend>
+              <div class="choices">
+                <input class="form-check-input" type="checkbox" id="coding" name="hobbies" value="coding">
+                <label for="coding">Coding</label>
+                <input class="form-check-input" type="checkbox" id="music" name="hobbies" value="music">
+                <label for="music">Music</label>
+                <input class="form-check-input" type="checkbox" id="sport" name="hobbies" value="sport">
+                <label for="sport">Sport</label>
+              </div>
+            </fieldset>
+
+            <div class="col-12">
+              <label class="form-label" for="country">Country</label>
+              <select class="form-select" id="country" name="country" aria-describedby="country-error" required>
+                <option value="">Select your country</option>
+                <option value="kazakhstan">Kazakhstan</option>
+                <option value="kyrgyzstan">Kyrgyzstan</option>
+                <option value="uzbekistan">Uzbekistan</option>
+                <option value="turkey">Turkey</option>
+                <option value="other">Other</option>
+              </select>
+              <div id="country-error" class="invalid-feedback">Select your country.</div>
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="col-12 mt-4 d-flex gap-2">
+              <button class="btn btn-dark" type="submit">Register</button>
+              <button class="btn btn-outline-dark" type="reset">Reset</button>
+            </div>
+          </form>
+          <p id="result" class="result" role="status" hidden></p>
+          <p class="demo-note">Practice form only. Nothing is sent or stored.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container site-footer">
+    <p>Arnur Kozhabergen <span>/</span> SE-2529</p>
+    <p>Web Technologies 1</p>
+  </footer>
+</body>
+</html>

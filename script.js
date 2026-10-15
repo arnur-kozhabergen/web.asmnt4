@@ -1,10 +1,16 @@
 const form = document.querySelector('form');
 const result = document.getElementById('result');
 const fields = form.querySelectorAll('input, textarea, select');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
 let submitted = false;
 
 function validateField(field) {
   field.setCustomValidity('');
+
+  if (field === confirmPassword && field.value !== password.value) {
+    field.setCustomValidity('Passwords must match.');
+  }
 
   if (['name', 'firstName', 'lastName'].includes(field.name) && field.value.trim().length < 2) {
     field.setCustomValidity('Enter at least two characters.');
